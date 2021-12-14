@@ -1,0 +1,38 @@
+.home_container {
+    background-color: rgb(255, 255, 255);
+    width: auto;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    padding: 50px 0px;
+  }
+  .home_container h2 {
+    padding: 30px 0px;
+    font-weight: 700;
+  }
+  .home_container h4 {
+    padding: 20px 0px;
+  }
+  
+  .home_container span {
+    font-size: 2rem;
+  }
+  .home_col:hover {
+    margin-top: -10px;
+    margin-bottom: 10px;
+    color: rgb(10, 88, 99);
+    text-shadow: 2px px 2px rgb(252, 246, 246);
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .home_icon {
+    border-radius: 50%;
+    font-size: 2em;
+    color: rgb(19, 186, 192);
+    text-shadow: 2px px 2px rgb(252, 246, 246);
+  }
+  
+  .home_p {
+    font-size: 1.1rem;
+  }
+  

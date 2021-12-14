@@ -1,0 +1,45 @@
+
+.footerSection {
+  background: #151414;
+  position: relative;
+}
+.footerN {
+  border-bottom: 1px solid #373636;
+}
+.singleN i {
+  color: #ff5e14;
+  font-size: 30px;
+  float: left;
+  margin-top: 8px;
+}
+.Ntext {
+  padding-left: 15px;
+  display: inline-block;
+}
+.Ntext h4 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.Ntext span {
+  color: #757575;
+  font-size: 15px;
+}
+.myCopyrightSec{
+  background: #202020;
+  padding: 5px;
+}
+.myCopyrightText p {
+  margin: 0;
+  font-size: 14px;
+  color: #878787;
+}
+.myCopyrightText p a{
+  color: #808811;
+  text-decoration: none;
+}
+.home_icon {
+  font-size: 2em;
+  color: rgb(255, 255, 255);
+}
