@@ -2,8 +2,8 @@
 import React from "react";
 import axios from "axios";
 
-//start Create class - export used in order to use component elsewhere
-export class Create extends React.Component {
+//start AddNew class - export used in order to use component elsewhere
+export class AddNew extends React.Component {
 
     //constructor method - called automatically when we created an object from that class
     constructor() {
@@ -126,4 +126,4 @@ export class Create extends React.Component {
 
         );
     }//end render method
-}//end Create class
+}//end AddNew class

@@ -49,12 +49,13 @@ export class GalleryItem extends React.Component {
                         <h3>{this.props.photo.price}</h3>
                     </div>
                     {/*link to URL with button to edit photo*/}                      
-                        <Button className={Styles.buttonRead} onClick={this.DeletePhoto}>Remove <span>
-                            <FiDelete className={Styles.home_icon} />
-                        </span></Button>
+                        
                         <Button className={Styles.buttonRead}> <span>
                             <FiEdit className={Styles.home_icon} />
                         </span><Link to={"/update/" + this.props.photo._id} className={Styles.linkButton}> Update</Link></Button>
+                        <Button className={Styles.buttonRead} onClick={this.DeletePhoto}>Remove <span>
+                            <FiDelete className={Styles.home_icon} />
+                        </span></Button>
                 </div>
             </div>
 

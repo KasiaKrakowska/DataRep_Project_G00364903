@@ -5,8 +5,8 @@ import axios from 'axios';
 import 'animate.css';
 import Styles from '../styles/read.module.css';
 
-//start Read class - export used in order to use component elsewhere
-export class Read extends React.Component {
+//start View class - export used in order to use component elsewhere
+export class View extends React.Component {
 
     //constructor
     constructor() {
@@ -27,20 +27,20 @@ export class Read extends React.Component {
     //Instantiate the network request To load data from a remote endpoint,
     componentDidMount() {//component lifecycle hook
 
-        //promise - axios get request to jsonblob URL
-        //library that serves to create HTTP requests that are present externally
-        //data is read from JSON server.js - port 4000
-        axios.get('http://localhost:4000/api/photos')
-            //fulfilled promise - when everything works it will update State with response from URL
-            .then(
-                (response) => {
-                    this.setState({ photos: response.data })
-                })
-            //rejected promise - if there is an error it will print to console
-            .catch(
-                (err) => {
-                    console.log(err)
-                });
+    //promise - axios get request to jsonblob URL
+    //library that serves to create HTTP requests that are present externally
+    //data is read from JSON server.js - port 4000
+    axios.get('http://localhost:4000/api/photos')
+        //fulfilled promise - when everything works it will update State with response from URL
+         .then(
+            (response) => {
+                 this.setState({ photos: response.data })
+             })
+        //rejected promise - if there is an error it will print to console
+         .catch(
+            (err) => {
+                 console.log(err)
+            });
     }//end componentDidMount
 
     //method used to refresh browser after item is deleted from DB
@@ -66,24 +66,19 @@ export class Read extends React.Component {
         //returns div tag content and print to screen 
         return (
             <div>
-                
                 <div className={Styles.services}>
-                    <div className={Styles.content_test}><br /><br />
-                        <h2>OUR OFFER</h2>
+                    <div className={Styles.content_test}>
                         <div className={Styles.boxServices}>
                             <span></span><br />
-                            <br /><h4>Lorem Ipsum</h4><br />
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Praesentium, culpa excepturi amet exercitationem in
-                        adipisci! Non beatae ullam dolores, ad voluptas quas. Ad
-                        quam molestias neque impedit totam id sunt?</p>
+                            <br /><h4>Neue Gallery</h4><br />
+                            <p>At Neue, we are excited to showcase original art from talented artists. If you are looking for a plece to show your art online
+together with other inspirational independent artists, we can help you present an artwork you will create.</p>
                         </div>
                     </div>
                 </div>
-
                 {/*embeds Gallery component in Read component // reloads data after delete*/}
                 <Gallery photos={this.state.photos} RefreshGallery={this.RefreshGallery}></Gallery>
             </div>
         );
     }//end render method
-}//end Read class
+}//end View class

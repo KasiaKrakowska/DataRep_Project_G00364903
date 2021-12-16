@@ -3,7 +3,6 @@ import React from "react";
 import axios from "axios";
 import Styles from "../styles/contactForm.module.css";
 
-
 //start ContactForm class - export used in order to use component elsewhere
 export class ContactForm extends React.Component {
 

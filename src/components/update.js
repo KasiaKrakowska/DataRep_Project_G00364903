@@ -134,22 +134,12 @@ export class Update extends React.Component {
                                 <div className="form-group">
                                     <button type="submit"
                                         value="Add New Photo"
-                                        className="primary-btn submit">Add New Item</button><br />
+                                        className="primary-btn submit">Update Item</button><br />
                                 </div>
                             </form><br /><br />
                         </div>
                     </div>
-                </div>
-                <br />
-
-
-
-
-
-
-
-
-
+                </div> <br />
             </div>
         );
     }//end render method

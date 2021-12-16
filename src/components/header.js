@@ -27,8 +27,8 @@ export class Header extends React.Component {
                             <Navbar.Collapse id="basic-navbar-nav">
                                 <Nav className="me-auto">
                                     <Nav.Link href="/">Home</Nav.Link>
-                                    <Nav.Link href="/read">Gallery</Nav.Link>
-                                    <Nav.Link href="/create">Upload</Nav.Link>
+                                    <Nav.Link href="/view">Gallery</Nav.Link>
+                                    <Nav.Link href="/addNew">Upload</Nav.Link>
                                     <Nav.Link href="/contactForm">Contact</Nav.Link>
                                 </Nav>
                             </Navbar.Collapse>

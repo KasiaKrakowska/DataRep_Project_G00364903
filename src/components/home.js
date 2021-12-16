@@ -14,26 +14,28 @@ import 'animate.css';
 export class Home extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.state = { date: new Date() };
-}
+  }
 
-tick() {
+  //set up dte and time
+  tick() {
     this.setState({ date: new Date() });
-}
-    
-componentDidMount() {
+  }
+
+  //a lifecycle hook that gets invoked right after a React component has been mounted
+  newComponentDidMount() {
     this.interval = setInterval(this.tick, 1000);
-}
-    
+  }
 
-componentDidMount() {
+  //a lifecycle hook that gets invoked right after a React component has been mounted
+  componentDidMount() {
     this.interval = setInterval(this.tick.bind(this), 1000);
-}
-
-componentWillUnmount() {
+  }
+  //a lifecycle hook that gets invoked right after a React component has been mounted
+  componentWillUnmount() {
     clearInterval(this.interval);
-}
+  }
   //start render method
   render() {
     //returns div tag home and print to screen 
@@ -52,12 +54,9 @@ componentWillUnmount() {
                       <span>
                         <SiAframe className={Styles.home_icon} />
                       </span>
-                      <h4>Lorem Iprum</h4>
+                      <h4>Design</h4>
                       <p className={Styles.home_p}>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Praesentium, culpa excepturi amet exercitationem in
-                        adipisci! Non beatae ullam dolores, ad voluptas quas. Ad
-                        quam molestias neque impedit totam id sunt?
+                      Together, we linked by their belief in good paintings, despite the conviction that painting as a medium is over. At Neue, painting is doing just great! We present works by well-known and recognised artists as well as those just making their debuts, some of them even as students.
                       </p>
                     </div>
                   </Col>
@@ -66,12 +65,9 @@ componentWillUnmount() {
                       <span>
                         <TiBrush className={Styles.home_icon} />
                       </span>
-                      <h4>Lorem Ipsum</h4>
+                      <h4>Art</h4>
                       <p className={Styles.home_p}>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Praesentium, culpa excepturi amet exercitationem in
-                        adipisci! Non beatae ullam dolores, ad voluptas quas. Ad
-                        quam molestias neque impedit totam id sunt?
+                      Neue is opening its doors to everyone. The idea remains the same: in art, modernity and tradition, quality and experimentation, in business, a combination of commercial, exhibition and editorial functions.
                       </p>
                     </div>
                   </Col>
@@ -85,12 +81,9 @@ componentWillUnmount() {
                       <span>
                         <BsDoorOpen className={Styles.home_icon} />
                       </span>
-                      <h4>Lorem Ipsum</h4>
+                      <h4>Space</h4>
                       <p className={Styles.home_p}>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Praesentium, culpa excepturi amet exercitationem in
-                        adipisci! Non beatae ullam dolores, ad voluptas quas. Ad
-                        quam molestias neque impedit totam id sunt?
+                      We are dedicated to promoting art and are committed to the long term development of each of our artists. We showcase the work of contemporary artists.
                       </p>
                     </div>
                   </Col>
@@ -99,12 +92,9 @@ componentWillUnmount() {
                       <span>
                         <TiHomeOutline className={Styles.home_icon} />
                       </span>
-                      <h4>Lorem Ipsum</h4>
+                      <h4>Colective</h4>
                       <p className={Styles.home_p}>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Praesentium, culpa excepturi amet exercitationem in
-                        adipisci! Non beatae ullam dolores, ad voluptas quas. Ad
-                        quam molestias neque impedit totam id sunt?
+                      We have a long history of helping artists to strengthen their collections. We offer a personalised art advisory service that ranges from single works to large collections. We advise on all aspects of building, managing and presenting your work.
                       </p>
                     </div>
                   </Col>
