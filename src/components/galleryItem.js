@@ -1,8 +1,7 @@
 //imports React library
 import React from "react";
-import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { ButtonGroup, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import Styles from "../styles/galleryItem.module.css";
 import axios from "axios";
 
@@ -34,10 +33,10 @@ export class GalleryItem extends React.Component {
             .catch();
     }//end Delete method
 
+    //star rating
     //start render method
     render() {
-        //returns div tag content and print to screen 
-        //div tag with bootstrap Card - displays JSON data from photos object
+
         return (
             <div className={Styles.wrapper}>
 
@@ -49,17 +48,14 @@ export class GalleryItem extends React.Component {
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                         <h3>{this.props.photo.price}</h3>
                     </div>
-                    {/*link to URL with button to edit photo*/}
-                    <ButtonGroup size="sm">
-                        <Button className={Styles.buttonRead}> <span>
-                            <FiEdit className={Styles.home_icon} />
-                        </span><Link to={"/edit/" + this.props.photo._id}></Link>  Change</Button>
+                    {/*link to URL with button to edit photo*/}                      
                         <Button className={Styles.buttonRead} onClick={this.DeletePhoto}>Remove <span>
                             <FiDelete className={Styles.home_icon} />
                         </span></Button>
-                    </ButtonGroup>
+                        <Button className={Styles.buttonRead}> <span>
+                            <FiEdit className={Styles.home_icon} />
+                        </span><Link to={"/update/" + this.props.photo._id} className={Styles.linkButton}> Update</Link></Button>
                 </div>
-
             </div>
 
         );

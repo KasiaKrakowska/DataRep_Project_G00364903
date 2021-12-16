@@ -20,15 +20,16 @@ export class Header extends React.Component {
                 <div>
                     <Navbar bg="dark" variant="dark" expand="lg">
                         <Container>
-                            <Navbar.Brand href="/home">
+                            <Navbar.Brand href="/">
                                 <img alt="logo" src={logo.default} width="50" height="50" className="d-inline-block align-top" />{' '}
                             </Navbar.Brand>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                             <Navbar.Collapse id="basic-navbar-nav">
                                 <Nav className="me-auto">
                                     <Nav.Link href="/">Home</Nav.Link>
-                                    <Nav.Link href="/read">Read</Nav.Link>
-                                    <Nav.Link href="/create">Create</Nav.Link>
+                                    <Nav.Link href="/read">Gallery</Nav.Link>
+                                    <Nav.Link href="/create">Upload</Nav.Link>
+                                    <Nav.Link href="/contactForm">Contact</Nav.Link>
                                 </Nav>
                             </Navbar.Collapse>
                         </Container>

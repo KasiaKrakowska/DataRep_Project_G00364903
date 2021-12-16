@@ -12,17 +12,36 @@ import 'animate.css';
 
 //start Content class - export used in order to use component elsewhere
 export class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = { date: new Date() };
+}
+
+tick() {
+    this.setState({ date: new Date() });
+}
+    
+componentDidMount() {
+    this.interval = setInterval(this.tick, 1000);
+}
+    
+
+componentDidMount() {
+    this.interval = setInterval(this.tick.bind(this), 1000);
+}
+
+componentWillUnmount() {
+    clearInterval(this.interval);
+}
   //start render method
   render() {
     //returns div tag home and print to screen 
     return (
       <div>
         <Container>
-          <h1>Hello World!</h1>
           {/*function to display time*/}
-
-          <h2 className="animate__animated animate__bounce">It is {new Date().toLocaleTimeString()}.</h2>
-
+          <div className="animate__animated animate__bounce">{this.state.date.toString()}</div>
           <Container fluid className={Styles.home_container}>
             <Row>
               <Col md={12} sm={12}>

@@ -1,9 +1,10 @@
 //imports React libraries
 import React from "react";
 import axios from "axios";
+import Styles from '../styles/update.module.css';
 
-//start Edit class - export used in order to use component elsewhere
-export class Edit extends React.Component {
+//start Update class - export used in order to use component elsewhere
+export class Update extends React.Component {
 
     //constructor method - called automatically when we created an object from that class
     constructor() {
@@ -94,49 +95,62 @@ export class Edit extends React.Component {
         //returns div tag content and print to screen 
         return (
             <div>
-                <form onSubmit={this.onSubmit}>
-                    {/*input control - title*/}
-                    <div className="form-group">
-                        <label> Change Title: </label>
-                        <input type="text"
-                            className="form-control"
-                            //value method - uses existing title
-                            value={this.state.Title}
-                            //onChange method - change photo title
-                            onChange={this.onChangeTitle}></input>
-                    </div><br />
+                <div className="section">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-12"></div>
+                            <br /><br /> <h2 className="title">Change Item</h2>
+                            <p>To change item in our gallery, simply type information into the appropriate fields bellow. Thank you.</p><hr />
+                            <form onSubmit={this.onSubmit}>
+                                {/*input control - title*/}
+                                <div className="form-group">
+                                    <input placeholder="New Name here..." type="text"
+                                        //value method - uses existing title
+                                        value={this.state.Title}
+                                        //onChange method - change photo title
+                                        onChange={this.onChangeTitle}></input>
+                                </div><br />
 
-                    {/*input control - price*/}
-                    <div className="form-group">
-                        <label>New Price: </label>
-                        <input type="text"
-                            className="form-control"
-                            //value method - uses existing price
-                            value={this.state.Price}
-                            //onChange method - change photos price
-                            onChange={this.onChangePrice}></input>
-                    </div><br />
+                                {/*input control - price*/}
+                                <div className="form-group">
+                                    <input placeholder="New Price here..." type="text"
+                                        //value method - uses existing price
+                                        value={this.state.Price}
+                                        //onChange method - change photos price
+                                        onChange={this.onChangePrice}></input>
+                                </div><br />
 
-                    {/*input control - poster*/}
-                    <div className="form-group">
-                        <label>Add New Poster: </label>
-                        <textarea type="text"
-                            className="form-control"
-                            //value method - uses existing poster
-                            value={this.state.Poster}
-                            //onChange method - change photo poster
-                            onChange={this.onChangePoster}>
-                        </textarea>
+                                {/*input control - poster*/}
+                                <div className="form-group">
+                                    <input placeholder="New Poster here..." type="text"
+                                        //value method - uses existing poster
+                                        value={this.state.Poster}
+                                        //onChange method - change photo poster
+                                        onChange={this.onChangePoster}>
+                                    </input>
 
-                    </div><br />
-                    {/*submit button*/}
-                    <div className="form-group">
-                        <input type="submit"
-                            value="Continue"
-                            className="btn btn-warning"></input>
+                                </div><br />
+                                {/*submit button*/}
+                                <div className="form-group">
+                                    <button type="submit"
+                                        value="Add New Photo"
+                                        className="primary-btn submit">Add New Item</button><br />
+                                </div>
+                            </form><br /><br />
+                        </div>
                     </div>
-                </form>
+                </div>
+                <br />
+
+
+
+
+
+
+
+
+
             </div>
         );
     }//end render method
-}//end Edit class
+}//end Update class

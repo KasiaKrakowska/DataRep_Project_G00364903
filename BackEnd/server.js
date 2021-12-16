@@ -2,7 +2,7 @@
 const express = require('express')
 //function is used to mount the specified middleware function(s) at the path which is being specified
 const app = express()
-//This app starts a server and listens on port 3000 for connections
+//This app starts a server and listens on port 4000 for connections
 const port = 4000
 //package for providing a Connect/Express middleware that can be used to enable CORS with various options
 const cors = require('cors');
@@ -12,6 +12,9 @@ const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 //add path used with express
 const path = require('path');
+//allows email sending
+const nodemailer = require('nodemailer');
+
 
 //will enable the express server to respond to preflight requests. 
 //A preflight request is basically an OPTION request sent to the server before the actual request is sent, in order to ask which origin and which request options the server accepts
@@ -37,6 +40,51 @@ app.use(function (req, res, next) {
 app.use(bodyParser.urlencoded({ extended: false }))
 //parse application/json
 app.use(bodyParser.json())
+
+//for Nodemailer to send mails, it needs to have a SMTP protocol used by email hosts
+const contactEmail = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    auth: {
+      user: "username",
+      pass: "password"
+    }
+  });//end SMTP
+
+// verify connection configuration
+contactEmail.verify(function(error, success) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("Server is ready to take our messages");
+  }
+});//end verification
+
+//set up the POST route to send the content of the contact form
+app.post('/contactForm', (req, res, next) => {
+    var name = req.body.name
+    var email = req.body.email
+    var subject = req.body.subject
+    var message = req.body.message
+  
+    var mail = {
+      from: name,
+      to: "katarzynakrakowska1@gmail.com",
+      subject: subject,
+      text: message
+    }
+  
+    contactEmail.sendMail(mail, (err, data) => {
+      if (err) {
+        res.json({
+          status: 'fail'
+        })
+      } else {
+        res.json({
+         status: 'success'
+        })
+      }
+    })
+  })//end app.post
 
 //connect to MongoDB using connection string (need to change password and db name)
 const newConnectionString = 'mongodb+srv://admin:admin@cluster0.qjgmc.mongodb.net/gallery?retryWrites=true&w=majority';
@@ -121,5 +169,5 @@ app.post('/api/photos', (req, res) => {
 
 //used to bind and listen the connections on the specified host and port
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`Server running on http://localhost:${port}`)
 })//end app.listen

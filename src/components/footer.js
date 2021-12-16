@@ -41,7 +41,7 @@ export class Footer extends React.Component {
                                     <div className={Styles.singleN}>
                                         <span><ImEnvelop className={Styles.home_icon} /></span>
                                         <div className={Styles.Ntext}>
-                                            <h4>Mail us</h4>
+                                            <h4><a href="mailto:g00364903@gmit.ie">Mail Us</a></h4>
                                             <span>mail@info.com</span>
                                         </div>
                                     </div>

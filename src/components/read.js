@@ -1,7 +1,6 @@
 //imports React library
 import React from "react";
 import { Gallery } from "./gallery";
-import { Container, Row, Col, Button } from "react-bootstrap";
 import axios from 'axios';
 import 'animate.css';
 import Styles from '../styles/read.module.css';
@@ -67,9 +66,10 @@ export class Read extends React.Component {
         //returns div tag content and print to screen 
         return (
             <div>
+                
                 <div className={Styles.services}>
                     <div className={Styles.content_test}><br /><br />
-                        <h2 class="animate__animated animate__pulse ">OUR OFFER</h2>
+                        <h2>OUR OFFER</h2>
                         <div className={Styles.boxServices}>
                             <span></span><br />
                             <br /><h4>Lorem Ipsum</h4><br />

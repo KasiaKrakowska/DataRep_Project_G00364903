@@ -8,7 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Read } from './components/read';
 import { Create } from './components/create';
-import { Edit } from './components/edit';
+import { Update } from './components/update';
+import { ContactForm} from './components/contactForm';
 
 //class App representing Component
 class App extends Component {
@@ -30,7 +31,8 @@ class App extends Component {
             <Route path='/' component={Home} exact />
             <Route path='/read' component={Read} exact />
             <Route path='/create' component={Create} exact />
-            <Route path='/edit/:id' component={Edit} exact />
+            <Route path='/update/:id' component={Update} exact />
+            <Route path='/contactForm' component={ContactForm} exact />
           </Switch>
 
           {/* Render Footer component */} 
